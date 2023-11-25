@@ -216,12 +216,12 @@ int? hoursRemaining ;
 
     ).then((value) {
 
-        isPlaying = true; // Voice is playing
+        // Voice is playing
 
     }).whenComplete(() {
       audioPlayer.dispose();
 
-      isPlaying = false;
+      isNowPlaying = false;
     });
 
 return isNowPlaying; ;
@@ -251,23 +251,28 @@ return isNowPlaying; ;
 
               if (nextPrayerTime!.isAtSameMomentAs(now!)) {
                 if (prayerNameString== 'الفجر'|| prayerName=='Fajr'){
+                  isFajer = true;
 
                  isFajer = play(isFajer);
 
                 }
                else  if (prayerNameString== 'العصر' || prayerName=='Asr'){
+                 isAsr = true;
 
                 isAsr =  play(isAsr);
                 }
             else if (prayerNameString== 'الظهر' || prayerName=='Dhuhr') {
+              isDhuhr = true;
 
                 isDhuhr =  play(isDhuhr);
                 }
                else if (prayerNameString== 'العشاء' || prayerName=='Isha') {
+                 isIsha = true;
 
                isIsha =  play(isIsha);
                 }
               else  if (prayerNameString== 'المغرب') {
+                isMaghrib = true;
 
                 isMaghrib =  play(isMaghrib);
                 }
